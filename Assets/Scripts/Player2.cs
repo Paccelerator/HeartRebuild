@@ -26,7 +26,7 @@ public class Player2 : MonoBehaviour
     public GameObject trophyDestroy;
     public GameObject PenDestroy;
     public GameObject football;
-
+    public GameObject dialogFram;
 
 
     public float horizontalSignal;               // 移动方向
@@ -41,7 +41,7 @@ public class Player2 : MonoBehaviour
     private Animator anim;
     private ContainersManager containers;
     private AudioSource audio;
-
+    private DialogFram dialog;
 
     void Start()
     {
@@ -49,6 +49,8 @@ public class Player2 : MonoBehaviour
         anim = model.GetComponent<Animator>();
         containers = ContainersManager.GetContainersVars();
         audio = GetComponent<AudioSource>();
+        dialog = dialogFram.GetComponent<DialogFram>();
+        dialog.ShowDialog();
     }
 
 

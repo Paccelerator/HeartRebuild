@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public bool run = false;
     public float jumpVelocity;
 
+    public GameObject dialogFram;
     public GamePanelLevel1 levelPanel1;
     public Canvas controlTips;
     public Canvas jumpTips;
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private ContainersManager containers;
     private AudioSource audio;
+    private DialogFram dialog;
 
 
     void Start()
@@ -42,11 +44,14 @@ public class PlayerController : MonoBehaviour
         anim = model.GetComponent<Animator>();
         containers = ContainersManager.GetContainersVars();
         audio = GetComponent<AudioSource>();
+        dialog = dialogFram.GetComponent<DialogFram>();
+        dialog.ShowDialog();
     }
 
 
     void Update()
     {
+        
         if (Input.GetKey(keyRun))
             run = true;
         else
